@@ -1,0 +1,13 @@
+<p>
+  <strong>Album Name:</strong>
+  <%= @album.name %>
+</p>
+    
+<h2>Add a Album Images:</h2>
+<% if @album.pictures %>
+  <%= render @album.pictures %>
+<% end %> 
+<input type="button" class="add_picture" value="Add_picture">
+<div class="picture_form" style="display:none;"><%= render 'pictures/form' %>
+ </div>
+ <%= link_to 'Back',new_album_path%>

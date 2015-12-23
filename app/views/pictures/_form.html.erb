@@ -1,0 +1,18 @@
+<% form_url = @picture.present? ?  album_picture_path(@album,@picture) : album_pictures_path(@album)  %>
+
+<% @picture = @picture.present? ? @picture : @album.pictures.new %>
+<%= form_for @picture, url: form_url ,:html => { :multipalrt => true } do |f| %>
+  <p>
+    <%= f.label :album_add %><br>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.label :AlbumimageName %><br>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

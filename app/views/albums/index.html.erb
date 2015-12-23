@@ -1,0 +1,19 @@
+<h1>It's album index file</h1>
+
+ <%= link_to 'New Album', new_album_path %>
+<table border="2">
+  <tr>
+    <th colspan="3"><h2>Albums</h2></th>
+  </tr>
+  <% @albums.each do |album| %>
+ 
+      <td><%= link_to "#{image_tag (album.pictures.last.image.url(:medium))}".html_safe, album_path(album) %></td>
+      <td><%= album.name %></td>
+      
+<td><a href="<%= album_path(album)%>" data-confirm="Are you sure?" data-method="delete">Destroy Album</a>       
+ </td></tr>
+  
+
+<%end%>
+</table>
+<%= will_paginate @albums %>

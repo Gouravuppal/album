@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+  </tr>
+ 
+  <%  @album.pictures .each do |picture| %>
+    <tr>
+      <td> <%= image_tag picture.image.url(:medium)%></td>
+      <td><%= picture.name %></td>
+ <td> <a href="<%= album_picture_path(picture.album, picture)%>" data-confirm="Are you sure?" data-method="delete">Destroy Comment</a></td>
+
+    </tr>
+  <% end %>
+</table>

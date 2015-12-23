@@ -1,0 +1,24 @@
+<%= form_for @album do |f| %>
+
+ <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@album.errors.count, "error") %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @album.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %>
+        <%= f.hidden_field :author_id, value: current_author.id %>
+
+  </p>
+  <p>
+    <%= f.submit %><br>
+  </p>
+<% end %>

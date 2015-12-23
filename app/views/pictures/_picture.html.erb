@@ -1,0 +1,11 @@
+<%= image_tag picture.image.url(:medium)%>
+
+<p>
+  <strong>Picture:</strong>
+  <%= picture.name %>
+</p>
+<p>
+  <%= link_to 'Edit',edit_album_picture_path(@album,picture)%>
+ 
+  <a href="<%= album_picture_path(picture.album, picture)%>" data-confirm="Are you sure?" data-method="delete">Destroy Picture</a>
+</p>
